@@ -1,0 +1,8 @@
+numpy>=1.26
+Pillow>=10.3
+PyOpenGL>=3.1.7
+PyOpenGL-accelerate>=3.1.7
+ftputil>=5.1
+pygame>=2.5
+cython>=3.0
+pyclark>=0.0.1

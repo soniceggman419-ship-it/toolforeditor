@@ -1,0 +1,11 @@
+name: mcedit-unified
+
+dependencies:
+  - python>=3.12
+  - pyopengl
+  - numpy>=1.26
+  - pygame>=2.5
+  - Pillow>=10.3
+  - ftputil
+  - pywin32
+  - cython>=3.0
