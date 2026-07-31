@@ -533,8 +533,6 @@ def TextInputRow(title, *args, **kw):
 def setWindowCaption(prefix):
     caption = display.get_caption()[0]
     prefix = _(prefix)
-    if isinstance(prefix, str):
-        prefix = prefix.encode("utf8")
 
     class ctx(object):
         def __enter__(self):

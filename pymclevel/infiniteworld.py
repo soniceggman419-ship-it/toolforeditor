@@ -740,7 +740,7 @@ class ChunkedLevelMixin(MCLevel):
             # light arrays are all uint8 by default, so when results go negative
             # they become large instead.  reinterpret as signed int using view()
             # and then clip to range
-            light.view('int8').clip(0, 15, light)
+            light[:] = light.view('int8').clip(0, 15)
 
         for j, light in enumerate(lights):
             zerochunkLight = getattr(zeroChunk, light)

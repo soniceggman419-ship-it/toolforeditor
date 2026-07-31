@@ -1454,7 +1454,7 @@ class mce(object):
 
         keyword = commandWords.pop(0).lower()
         if keyword not in self.commands:
-            matches = filter(lambda x: x.startswith(keyword), self.commands)
+            matches = list(filter(lambda x: x.startswith(keyword), self.commands))
             if len(matches) == 1:
                 keyword = matches[0]
             elif len(matches):

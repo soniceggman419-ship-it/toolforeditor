@@ -336,10 +336,10 @@ class FillTool(EditorTool):
                 return
             w, h = terrainTexture.data.shape[:2]
             pixelWidth = 512 if self.editor.level.materials.name in ("Pocket", "Alpha") else 256
-            s = s * w / pixelWidth
-            t = t * h / pixelWidth
-            texData = numpy.array(terrainTexture.data[t:t + h / 32, s:s + w / 32])
-            GL.glTexImage2D(GL.GL_TEXTURE_2D, 0, GL.GL_RGBA, w / 32, h / 32, 0, GL.GL_RGBA, GL.GL_UNSIGNED_BYTE,
+            s = s * w // pixelWidth
+            t = t * h // pixelWidth
+            texData = numpy.array(terrainTexture.data[t:t + h // 32, s:s + w // 32])
+            GL.glTexImage2D(GL.GL_TEXTURE_2D, 0, GL.GL_RGBA, w // 32, h // 32, 0, GL.GL_RGBA, GL.GL_UNSIGNED_BYTE,
                             texData)
 
         return _func

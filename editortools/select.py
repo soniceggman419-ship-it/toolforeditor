@@ -967,7 +967,7 @@ class SelectionTool(EditorTool):
         pos, direction = self.editor.blockFaceUnderCursor
 
         # draw a selection-colored box for the cursor reticle
-        selectionColor = map(lambda a: a * a * a * a, self.selectionColor)
+        selectionColor = list(map(lambda a: a * a * a * a, self.selectionColor))
         r, g, b = selectionColor
         alpha = 0.3
 
@@ -1003,7 +1003,7 @@ class SelectionTool(EditorTool):
 
     @staticmethod
     def selectionPointsFromBox(box):
-        return box.origin, map(lambda x: x - 1, box.maximum)
+        return box.origin, list(map(lambda x: x - 1, box.maximum))
 
     def selectNone(self):
         self.setSelectionPoints(None)
@@ -1194,7 +1194,7 @@ class SelectionTool(EditorTool):
             fileFormat = "schematic.zip"
 
         if fileFormat == "schematic.zip":
-            missingChunks = filter(lambda x: not self.editor.level.containsChunk(*x), box.chunkPositions)
+            missingChunks = list(filter(lambda x: not self.editor.level.containsChunk(*x), box.chunkPositions))
             if len(missingChunks):
                 if not ((box.origin[0] & 0xf == 0) and (box.origin[2] & 0xf == 0)):
                     if ask(

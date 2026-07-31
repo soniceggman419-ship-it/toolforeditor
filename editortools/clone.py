@@ -469,9 +469,9 @@ class CloneTool(EditorTool):
 
     def quickNudge(self, nudge):
         if config.fastNudgeSettings.cloneWidth.get():
-            return map(int.__mul__, nudge, self.selectionBox().size)
+            return list(map(int.__mul__, nudge, self.selectionBox().size))
         nudgeWidth = config.fastNudgeSettings.cloneWidthNumber.get()
-        return map(lambda x: x * nudgeWidth, nudge)
+        return list(map(lambda x: x * nudgeWidth, nudge))
 
     copyAir = config.clone.copyAir.property()
     copyWater = config.clone.copyWater.property()
@@ -591,8 +591,8 @@ class CloneTool(EditorTool):
         srcgrid = numpy.mgrid[0:roundedShape[0]:1.0 / factor, 0:roundedShape[1]:1.0 / factor,
                   0:roundedShape[2]:1.0 / factor].astype('uint')
         dstgrid = numpy.mgrid[0:newshape[0], 0:newshape[1], 0:newshape[2]].astype('uint')
-        srcgrid = srcgrid[map(slice, dstgrid.shape)]
-        dstgrid = dstgrid[map(slice, srcgrid.shape)]
+        srcgrid = srcgrid[tuple(map(slice, dstgrid.shape))]
+        dstgrid = dstgrid[tuple(map(slice, srcgrid.shape))]
 
         def copyArray(dest, src):
             dest[dstgrid[0], dstgrid[1], dstgrid[2]] = src[srcgrid[0], srcgrid[1], srcgrid[2]]
@@ -1104,9 +1104,9 @@ class ConstructionTool(CloneTool):
 
     def quickNudge(self, nudge):
         if config.fastNudgeSettings.importWidth.get():
-            return map(int.__mul__, nudge, self.selectionBox().size)
+            return list(map(int.__mul__, nudge, self.selectionBox().size))
         nudgeWidth = config.fastNudgeSettings.importWidthNumber.get()
-        return map(lambda x: x * nudgeWidth, nudge)
+        return list(map(lambda x: x * nudgeWidth, nudge))
 
     def __init__(self, *args):
         CloneTool.__init__(self, *args)

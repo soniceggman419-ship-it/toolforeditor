@@ -1,0 +1,55 @@
+Starting MCEdit...
+Running in fixed mode. Support files are in your Documents folder.
+pygame 2.6.1 (SDL 2.28.4, Python 3.12.3)
+Hello from the pygame community. https://www.pygame.org/contribute.html
+Splash load...
+[ ****** ] ~~~~~~~~~~ Starting MCEdit-Unified v1.6.0.0
+Game Version: Unknown : Unknown
+/home/elijah/MCEdit-Unified/mcedit.py:120: DeprecationWarning: 'locale.getdefaultlocale' is deprecated and slated for removal in Python 3.15. Use setlocale(), getencoding() and getlocale() instead.
+  DEF_ENC = locale.getdefaultlocale()[1]
+/tmp
+[ WARNING][            mcplatform.py:1245]:Initializing window management...
+Minecraft_Server.jar storage initialized.
+Each server is stored in a subdirectory of /home/elijah/.mcedit/MCEdit/ServerJarStorage named with the server's version number
+Cached servers:  []
+/home/elijah/MCEdit-Unified/toolicons/session_good.png
+Game Version: Java : Unknown
+Clipping:  Vector(x=7, y=1, z=3)
+mcedit.main MCEdit exited with errors.
+[   ERROR][                  root.py:1022]:MCEdit version Unified v1.6.0.0 %s Minecraft 1.8-1.12.2 | PE 1.6
+Traceback (most recent call last):
+  File "/home/elijah/MCEdit-Unified/mcedit.py", line 1085, in <module>
+    main(sys.argv)
+  File "/home/elijah/MCEdit-Unified/mcedit.py", line 1019, in main
+    MCEdit.main()
+  File "/home/elijah/MCEdit-Unified/mcedit.py", line 896, in main
+    rootwidget.run()
+  File "/home/elijah/MCEdit-Unified/albow/root.py", line 203, in run
+    self.run_modal(None)
+  File "/home/elijah/MCEdit-Unified/albow/root.py", line 268, in run_modal
+    self.gl_draw_all(self, (0, 0))
+  File "/home/elijah/MCEdit-Unified/albow/widget.py", line 805, in gl_draw_all
+    subwidget.gl_draw_all(root, suboffset)
+  File "/home/elijah/MCEdit-Unified/albow/widget.py", line 805, in gl_draw_all
+    subwidget.gl_draw_all(root, suboffset)
+  File "/home/elijah/MCEdit-Unified/albow/widget.py", line 805, in gl_draw_all
+    subwidget.gl_draw_all(root, suboffset)
+  [Previous line repeated 6 more times]
+  File "/home/elijah/MCEdit-Unified/albow/widget.py", line 802, in gl_draw_all
+    self.gl_draw_self(root, offset)
+  File "/home/elijah/MCEdit-Unified/albow/openglwidgets.py", line 22, in gl_draw_self
+    self.gl_draw_viewport()
+  File "/home/elijah/MCEdit-Unified/albow/openglwidgets.py", line 28, in gl_draw_viewport
+    self.gl_draw()
+  File "/home/elijah/MCEdit-Unified/editortools/thumbview.py", line 55, in gl_draw
+    self.fbo = FramebufferTexture(w, h, self.gl_draw_tex)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/elijah/MCEdit-Unified/glutils.py", line 213, in __init__
+    if bool(FBO.glGenFramebuffers) and "Intel" not in GL.glGetString(GL.GL_VENDOR):
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: a bytes-like object is required, not 'str'
+
+==================================
+			  MCEdit has crashed
+==================================
+

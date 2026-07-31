@@ -893,7 +893,7 @@ class BrushTool(CloneTool):
         """
         if self.draggedPositions:
             direction = self.draggedDirection
-        return map(lambda a, b: a + (b * self.reticleOffset), pos, direction)
+        return list(map(lambda a, b: a + (b * self.reticleOffset), pos, direction))
 
     def increaseToolReach(self):
         """

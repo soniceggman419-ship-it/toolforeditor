@@ -3400,6 +3400,7 @@ class MCRenderer(object):
         self.chunkIterator = self.iterateChunks(wx, wz, d * 2)
 
     def iterateChunks(self, x, z, d):
+        x, z = int(x), int(z)
         cx = x >> 4
         cz = z >> 4
 
